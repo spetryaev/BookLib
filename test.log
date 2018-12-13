@@ -1,0 +1,33 @@
+12.10:15.08.15  INFO	ru.sfedu.booklib.BookLibMain:24 - testlog
+12.10:15.09.10  INFO	ru.sfedu.booklib.BookLibMain:24 - testlog
+12.10:15.09.26  INFO	ru.sfedu.booklib.BookLibMain:24 - testlog
+12.10:15.09.50  INFO	ru.sfedu.booklib.Constants:24 - testlog
+12.10:15.13.03  INFO	ru.sfedu.booklib.BookLibMain:24 - testlog
+12.10:15.13.27  INFO	ru.sfedu.booklib.BookLibMain:24 - testlog
+12.10:15.13.27  INFO	ru.sfedu.booklib.api.CSVApi:39 - test
+12.10:15.14.17  INFO	ru.sfedu.booklib.BookLibMain:24 - testlog
+12.10:15.14.17 ERROR	ru.sfedu.booklib.api.CSVApi:40 - CSV file already exists
+12.10:15.15.55  INFO	ru.sfedu.booklib.BookLibMain:24 - testlog
+12.10:15.15.55 ERROR	ru.sfedu.booklib.api.CSVApi:40 - CSV file already exists
+12.10:15.16.05  INFO	ru.sfedu.booklib.BookLibMain:24 - testlog
+12.10:15.16.05  INFO	ru.sfedu.booklib.api.CSVApi:37 - CSV file created successfully
+12.10:15.17.01  INFO	ru.sfedu.booklib.BookLibMain:24 - testlog
+12.10:15.17.01 ERROR	ru.sfedu.booklib.api.CSVApi:39 - CSV file already exists
+12.10:15.18.59  INFO	ru.sfedu.booklib.BookLibMain:43 - Launching the application...
+12.10:15.18.59  INFO	ru.sfedu.booklib.BookLibMain:44 - Operating System: Windows 10 10.0
+12.10:15.18.59  INFO	ru.sfedu.booklib.BookLibMain:48 - JRE: 1.8.0_111
+12.10:15.18.59  INFO	ru.sfedu.booklib.BookLibMain:49 - Java Launched From: C:\Program Files\Java\jdk1.8.0_111\jre
+12.10:15.18.59  INFO	ru.sfedu.booklib.BookLibMain:50 - Class Path: C:\Users\Sergey\Documents\NetBeansProjects\BookLib\target\classes;C:\Users\Sergey\.m2\repository\com\opencsv\opencsv\4.2\opencsv-4.2.jar;C:\Users\Sergey\.m2\repository\org\apache\commons\commons-lang3\3.7\commons-lang3-3.7.jar;C:\Users\Sergey\.m2\repository\org\apache\commons\commons-text\1.3\commons-text-1.3.jar;C:\Users\Sergey\.m2\repository\commons-beanutils\commons-beanutils\1.9.3\commons-beanutils-1.9.3.jar;C:\Users\Sergey\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\Sergey\.m2\repository\commons-collections\commons-collections\3.2.2\commons-collections-3.2.2.jar;C:\Users\Sergey\.m2\repository\org\apache\commons\commons-collections4\4.1\commons-collections4-4.1.jar;C:\Users\Sergey\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;C:\Users\Sergey\.m2\repository\org\apache\logging\log4j\log4j-api\2.9.0\log4j-api-2.9.0.jar
+12.10:15.18.59  INFO	ru.sfedu.booklib.BookLibMain:51 - Library Path: C:\Program Files\Java\jdk1.8.0_111\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\OpenVPN\bin;C:\Program Files\PuTTY\;C:\Program Files\Common Files\Autodesk Shared\;C:\Program Files\Git\cmd;C:\Users\Sergey\AppData\Local\Programs\Python\Python37-32\Scripts\;C:\Users\Sergey\AppData\Local\Programs\Python\Python37-32\;C:\Users\Sergey\AppData\Local\Microsoft\WindowsApps;C:\Users\Sergey\AppData\Local\Programs\Microsoft VS Code\bin;.
+12.10:15.18.59  INFO	ru.sfedu.booklib.BookLibMain:52 - User Home Directory: C:\Users\Sergey
+12.10:15.18.59 ERROR	ru.sfedu.booklib.api.CSVApi:39 - CSV file already exists
+12.10:15.19.20  INFO	ru.sfedu.booklib.BookLibMain:43 - Launching the application...
+12.10:15.19.20  INFO	ru.sfedu.booklib.BookLibMain:44 - Operating System: Windows 10 10.0
+12.10:15.19.20  INFO	ru.sfedu.booklib.BookLibMain:48 - JRE: 1.8.0_111
+12.10:15.19.20  INFO	ru.sfedu.booklib.BookLibMain:49 - Java Launched From: C:\Program Files\Java\jdk1.8.0_111\jre
+12.10:15.19.20  INFO	ru.sfedu.booklib.BookLibMain:50 - Class Path: C:\Users\Sergey\Documents\NetBeansProjects\BookLib\target\classes;C:\Users\Sergey\.m2\repository\com\opencsv\opencsv\4.2\opencsv-4.2.jar;C:\Users\Sergey\.m2\repository\org\apache\commons\commons-lang3\3.7\commons-lang3-3.7.jar;C:\Users\Sergey\.m2\repository\org\apache\commons\commons-text\1.3\commons-text-1.3.jar;C:\Users\Sergey\.m2\repository\commons-beanutils\commons-beanutils\1.9.3\commons-beanutils-1.9.3.jar;C:\Users\Sergey\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\Sergey\.m2\repository\commons-collections\commons-collections\3.2.2\commons-collections-3.2.2.jar;C:\Users\Sergey\.m2\repository\org\apache\commons\commons-collections4\4.1\commons-collections4-4.1.jar;C:\Users\Sergey\.m2\repository\log4j\log4j\1.2.17\log4j-1.2.17.jar;C:\Users\Sergey\.m2\repository\org\apache\logging\log4j\log4j-api\2.9.0\log4j-api-2.9.0.jar
+12.10:15.19.20  INFO	ru.sfedu.booklib.BookLibMain:51 - Library Path: C:\Program Files\Java\jdk1.8.0_111\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\OpenVPN\bin;C:\Program Files\PuTTY\;C:\Program Files\Common Files\Autodesk Shared\;C:\Program Files\Git\cmd;C:\Users\Sergey\AppData\Local\Programs\Python\Python37-32\Scripts\;C:\Users\Sergey\AppData\Local\Programs\Python\Python37-32\;C:\Users\Sergey\AppData\Local\Microsoft\WindowsApps;C:\Users\Sergey\AppData\Local\Programs\Microsoft VS Code\bin;.
+12.10:15.19.20  INFO	ru.sfedu.booklib.BookLibMain:52 - User Home Directory: C:\Users\Sergey
+12.10:15.19.20  INFO	ru.sfedu.booklib.BookLibMain:53 - User Working Directory: C:\Users\Sergey\Documents\NetBeansProjects\BookLib
+12.10:15.19.20  INFO	ru.sfedu.booklib.BookLibMain:54 - Test INFO logging.
+12.10:15.19.20 ERROR	ru.sfedu.booklib.api.CSVApi:39 - CSV file already exists
