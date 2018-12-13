@@ -29,7 +29,7 @@ public class PgsqlDatabaseApiTest extends PgsqlDatabaseApi{
     
      @BeforeClass
     public static void setUpClass() {
-    log.debug("------------------------CSV API TEST LOG-------------------------");
+    log.debug("------------------------Postgres SQL Database API TEST LOG-------------------------");
     }
     
     @AfterClass
