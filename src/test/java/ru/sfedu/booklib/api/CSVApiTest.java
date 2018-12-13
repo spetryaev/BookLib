@@ -54,7 +54,7 @@ public class CSVApiTest {
        
         log.debug("\t @TEST@ \t \"CSVApiTest\" => \"createDataFile\" =>");
         CSVApi instance = new CSVApi();
-        boolean result = instance.createDataFile();
+        instance.createDataFile();
         
         log.debug("----------------------------------------------------------------");
     }

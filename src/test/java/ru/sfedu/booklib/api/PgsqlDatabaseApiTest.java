@@ -6,6 +6,7 @@
 package ru.sfedu.booklib.api;
 
 import java.util.List;
+import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -20,31 +21,29 @@ import ru.sfedu.booklib.model.Book;
  */
 public class PgsqlDatabaseApiTest extends PgsqlDatabaseApi{
     
+    private static final Logger log = Logger.getLogger(PgsqlDatabaseApiTest.class);
+    
+    
     public PgsqlDatabaseApiTest() {
     }
     
-    @BeforeClass
+     @BeforeClass
     public static void setUpClass() {
+    log.debug("------------------------CSV API TEST LOG-------------------------");
     }
     
     @AfterClass
     public static void tearDownClass() {
     }
     
-    @Before
-    public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
-    }
+
 
     /**
      * Test of connectToDatabase method, of class PgsqlDatabaseApi.
      */
     @Before
     public void testConnectToDatabase() throws Exception {
-        System.out.println("connectToDatabase");
+        log.debug("\t @TEST@ \t \"PgsqlDatabaseApiTest\" => \"testConnectToDatabase\" =>");
         PgsqlDatabaseApi instance = new PgsqlDatabaseApi();
         boolean expResult = true;
         boolean result = instance.connectToDatabase();
@@ -53,8 +52,9 @@ public class PgsqlDatabaseApiTest extends PgsqlDatabaseApi{
     
     @After
     public void testCloseConnection() {
-    System.out.println("closeConnection");
+    log.debug("\t @TEST@ \t \"PgsqlDatabaseApiTest\" => \"testCloseConnection\" =>");
     PgsqlDatabaseApi.closeConnection();
+    log.debug("----------------------------------------------------------------");
     }
 
     /**
@@ -62,8 +62,8 @@ public class PgsqlDatabaseApiTest extends PgsqlDatabaseApi{
      */
     @Test
     public void testAddBook() {
-        System.out.println("addBook");
-        Book bookObject = new Book(14,"The Witr","Test", "Fantasy", "1985","Poland","304");
+        log.debug("\t @TEST@ \t \"PgsqlDatabaseApiTest\" => \"testAddbook\" =>");
+        Book bookObject = new Book(47,"The Witr","Test", "Fantasy", "1985","Poland","304");
         PgsqlDatabaseApi instance = new PgsqlDatabaseApi();
         boolean expResult = instance.addBook(bookObject);
         boolean result = true;
@@ -77,7 +77,7 @@ public class PgsqlDatabaseApiTest extends PgsqlDatabaseApi{
      */
     @Test
     public void testGetBookList() {
-        System.out.println("getBookList");
+        log.debug("\t @TEST@ \t \"PgsqlDatabaseApiTest\" => \"testGetBookList\" =>");
         PgsqlDatabaseApi instance = new PgsqlDatabaseApi();
         List<Book> expResult = instance.getBookList();
         List<Book> result = expResult;
@@ -90,8 +90,8 @@ public class PgsqlDatabaseApiTest extends PgsqlDatabaseApi{
      */
     @Test
     public void testGetBookById() {
-        System.out.println("getBookById");
-        int bookID = 22;
+        log.debug("\t @TEST@ \t \"PgsqlDatabaseApiTest\" => \"testGetBookById\" =>");
+        int bookID = 7;
         PgsqlDatabaseApi instance = new PgsqlDatabaseApi();
         Book expResult =  instance.getBookById(bookID);
         Book result = expResult;
@@ -103,7 +103,7 @@ public class PgsqlDatabaseApiTest extends PgsqlDatabaseApi{
      */
     @Test
     public void testPrintBookList() {
-        System.out.println("printBookList");
+        log.debug("\t @TEST@ \t \"PgsqlDatabaseApiTest\" => \"testPrintBookList\" =>");
         PgsqlDatabaseApi instance = new PgsqlDatabaseApi();
         boolean expResult = true;
         boolean result = instance.printBookList();
@@ -115,8 +115,8 @@ public class PgsqlDatabaseApiTest extends PgsqlDatabaseApi{
      */
     @Test
     public void testUpdate() {
-        System.out.println("update");
-        Book bookObject = new Book(14,"update test 5","Test", "TTTTEEEST", "1985","Poland","304");
+        log.debug("\t @TEST@ \t \"PgsqlDatabaseApiTest\" => \"testUpdate\" =>");
+        Book bookObject = new Book(12,"update test 5","Test", "TTTTEEEST", "1985","Poland","304");
         PgsqlDatabaseApi instance = new PgsqlDatabaseApi();
         boolean expResult = true;
         boolean result = instance.update(bookObject);
@@ -129,8 +129,8 @@ public class PgsqlDatabaseApiTest extends PgsqlDatabaseApi{
      */
     @Test
     public void testDelete() {
-        System.out.println("delete");
-        int bookID = 1;
+        log.debug("\t @TEST@ \t \"PgsqlDatabaseApiTest\" => \"testDelete\" =>");
+        int bookID = 47;
         PgsqlDatabaseApi instance = new PgsqlDatabaseApi();
         boolean expResult = false;
         boolean result = instance.delete(bookID);
@@ -143,8 +143,8 @@ public class PgsqlDatabaseApiTest extends PgsqlDatabaseApi{
      */
     @Test
     public void testPrintBook() {
-        System.out.println("printBook");
-        Book bookObject = new Book(1,"TESTPRINT","Test", "Fantasy", "1488","Poland","304");
+        log.debug("\t @TEST@ \t \"PgsqlDatabaseApiTest\" => \"testPrintBook\" =>");
+        Book bookObject = new Book(47,"TESTPRINT","Test", "Fantasy", "1488","Poland","304");
         PgsqlDatabaseApi instance = new PgsqlDatabaseApi();
         boolean expResult = true;
         boolean result = instance.printBook(bookObject);

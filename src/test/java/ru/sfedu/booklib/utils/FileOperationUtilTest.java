@@ -5,6 +5,7 @@
  */
 package ru.sfedu.booklib.utils;
 
+import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -18,23 +19,29 @@ import static org.junit.Assert.*;
  */
 public class FileOperationUtilTest {
     
+    private static final Logger log = Logger.getLogger(FileOperationUtilTest.class);
     public FileOperationUtilTest() {
     }
     
+   
     @BeforeClass
     public static void setUpClass() {
+    log.debug("------------------------File Operation Util TEST LOG-------------------------");
     }
     
     @AfterClass
     public static void tearDownClass() {
+    log.debug("----------------------------------------------------------------");
     }
     
     @Before
     public void setUp() {
+    
     }
     
     @After
     public void tearDown() {
+    
     }
 
     /**

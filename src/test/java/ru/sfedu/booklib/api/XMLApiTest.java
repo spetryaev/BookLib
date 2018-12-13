@@ -13,6 +13,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import ru.sfedu.booklib.model.Book;
+import org.apache.log4j.Logger;
 
 /**
  *
@@ -20,33 +21,31 @@ import ru.sfedu.booklib.model.Book;
  */
 public class XMLApiTest {
     
+    private static final Logger log = Logger.getLogger(XMLApiTest.class);
+    
     public XMLApiTest() {
     }
     
     @BeforeClass
     public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-    @Before
-    public void setUp() {
+    log.debug("------------------------XML API TEST LOG-------------------------");
     }
     
     @After
-    public void tearDown() {
+    public void tearDown(){
+    log.debug("----------------------------------------------------------------");
     }
+    
 
     /**
      * Test of createDataFile method, of class XMLApi.
      */
     @Before
     public void testCreateDataFile() {
-        System.out.println("createDataFile");
+        log.debug("\t @TEST@ \t \"XMLApiTest\" => \"testCreateDataFile\" =>");
         XMLApi instance = new XMLApi();
         instance.createDataFile();
+        log.debug("----------------------------------------------------------------");
         
     }
 
@@ -55,7 +54,7 @@ public class XMLApiTest {
      */
     @Test
     public void testAddBook() {
-        System.out.println("addBook");
+        log.debug("\t @TEST@ \t \"XMLApiTest\" => \"testAddBook\" =>");
         Book bookObject = new Book(23,"The Witr","Sapkovsky", "Fantasy", "1985","Poland","304");
         XMLApi instance = new XMLApi();
         boolean expResult = true;
@@ -69,7 +68,7 @@ public class XMLApiTest {
      */
     @Test
     public void testGetBookList() {
-        System.out.println("getBookList");
+        log.debug("\t @TEST@ \t \"XMLApiTest\" => \"testGetBookList\" =>");
         XMLApi instance = new XMLApi();
         List<Book> expResult = instance.getBookList();
         List<Book> result = expResult;
@@ -82,7 +81,7 @@ public class XMLApiTest {
      */
     @Test
     public void testGetBookById() {
-        System.out.println("getBookById");
+        log.debug("\t @TEST@ \t \"XMLApiTest\" => \"testGetBookById\" =>");
         int bookID = 16;
         XMLApi instance = new XMLApi();
         Book expResult = instance.getBookById(bookID);
@@ -96,7 +95,7 @@ public class XMLApiTest {
      */
     @Test
     public void testUpdate() {
-        System.out.println("update");
+        log.debug("\t @TEST@ \t \"XMLApiTest\" => \"testUpdate\" =>");
         Book newBookObject = new Book(23,"Test xml","Sapkovsky", "Fantasy", "1985","Poland","304");
         XMLApi instance = new XMLApi();
         boolean expResult = true;
@@ -110,7 +109,7 @@ public class XMLApiTest {
      */
     @Test
     public void testDelete() {
-        System.out.println("delete");
+        log.debug("\t @TEST@ \t \"XMLApiTest\" => \"testDelete\" =>");
         int bookID = 1;
         XMLApi instance = new XMLApi();
         boolean expResult = false;
@@ -124,7 +123,7 @@ public class XMLApiTest {
      */
     @Test
     public void testPrintBookList() {
-        System.out.println("printBookList");
+        log.debug("\t @TEST@ \t \"XMLApiTest\" => \"testPrintBookList\" =>");
         XMLApi instance = new XMLApi();
         boolean expResult = true;
         boolean result = instance.printBookList();
@@ -137,7 +136,7 @@ public class XMLApiTest {
      */
     @Test
     public void testPrintBook() {
-        System.out.println("printBook");
+        log.debug("\t @TEST@ \t \"XMLApiTest\" => \"testPrintBook\" =>");
         Book bookObject = new Book(23,"Test xml","Sapkovsky", "Fantasy", "1985","Poland","304");
         XMLApi instance = new XMLApi();
         boolean expResult = true;

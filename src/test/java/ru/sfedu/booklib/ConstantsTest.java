@@ -5,6 +5,7 @@
  */
 package ru.sfedu.booklib;
 
+import org.apache.log4j.Logger;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -18,15 +19,18 @@ import static org.junit.Assert.*;
  */
 public class ConstantsTest {
     
+    private static final Logger log = Logger.getLogger(ConstantsTest.class);
     public ConstantsTest() {
     }
     
-    @BeforeClass
+   @BeforeClass
     public static void setUpClass() {
+    log.debug("------------------------Constants TEST LOG-------------------------");
     }
     
     @AfterClass
     public static void tearDownClass() {
+    log.debug("----------------------------------------------------------------");
     }
     
     @Before
