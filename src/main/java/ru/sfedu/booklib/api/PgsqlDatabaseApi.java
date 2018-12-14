@@ -132,6 +132,7 @@ public class PgsqlDatabaseApi implements InterfaceAPI{
         try {
             String query = "select * from books where bookId = " + bookID;
             queryResult = statement.executeQuery(query);
+            queryResult.next();
             Book bookObject = new Book(
                         queryResult.getInt(1),
                         queryResult.getString(2),
