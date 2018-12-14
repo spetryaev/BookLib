@@ -40,7 +40,7 @@ public class PgsqlDatabaseApi implements InterfaceAPI{
     protected static boolean connectToDatabase(){
         log.info("\"connectToDatabase\" => Try to get connection");
         try {            
-           // Class.forName("org.postgresql.Driver");
+            Class.forName("org.postgresql.Driver");
             PgsqlDatabaseApi.conn = DriverManager.getConnection(DATABASE_URL, DATABASE_USER, DATABASE_PASSWORD);
             conn.setAutoCommit(false);
              PgsqlDatabaseApi.connStatus = conn.isValid(0);
@@ -58,7 +58,7 @@ public class PgsqlDatabaseApi implements InterfaceAPI{
             }
             
         }
-        catch (SQLException e){
+        catch (Exception e){
             log.fatal("\"connectToDatabase\" => Connection failed." + e);
                 return false;
         }
