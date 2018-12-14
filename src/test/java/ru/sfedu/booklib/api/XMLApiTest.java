@@ -29,6 +29,7 @@ public class XMLApiTest {
     @BeforeClass
     public static void setUpClass() {
     log.debug("------------------------XML API TEST LOG-------------------------");
+    log.debug("auto commit sync test");
     }
     
     @After
