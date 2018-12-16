@@ -31,27 +31,14 @@ public class PgsqlDatabaseApiTest extends PgsqlDatabaseApi{
     public static void setUpClass() {
     log.debug("------------------------PostgresSQL Database API TEST LOG-------------------------");
     }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
-
-
+  
     /**
      * Test of connectToDatabase method, of class PgsqlDatabaseApi.
      */
-    @Before
-    public void testConnectToDatabase() throws Exception {
-        log.debug("\t @TEST@ \t \"PgsqlDatabaseApiTest\" => \"testConnectToDatabase\" =>");
-        PgsqlDatabaseApi instance = new PgsqlDatabaseApi();
-        boolean expResult = true;
-        boolean result = instance.connectToDatabase();
-        assertEquals(expResult, result);
-    }
+   
     
-    @After
-    public void testCloseConnection() {
+    @AfterClass
+    public static void testCloseConnection() {
     log.debug("\t @TEST@ \t \"PgsqlDatabaseApiTest\" => \"testCloseConnection\" =>");
     PgsqlDatabaseApi.closeConnection();
     log.debug("----------------------------------------------------------------");
@@ -63,7 +50,7 @@ public class PgsqlDatabaseApiTest extends PgsqlDatabaseApi{
     @Test
     public void testAddBook() {
         log.debug("\t @TEST@ \t \"PgsqlDatabaseApiTest\" => \"testAddbook\" =>");
-        Book bookObject = new Book(70,"The Witr","Test", "Fantasy", "1985","Poland","304");
+        Book bookObject = new Book(72,"The Witr","Test", "Fantasy", "1985","Poland","304");
         PgsqlDatabaseApi instance = new PgsqlDatabaseApi();
         boolean expResult = instance.addBook(bookObject);
         boolean result = true;
@@ -130,7 +117,7 @@ public class PgsqlDatabaseApiTest extends PgsqlDatabaseApi{
     @Test
     public void testDelete() {
         log.debug("\t @TEST@ \t \"PgsqlDatabaseApiTest\" => \"testDelete\" =>");
-        int bookID = 70;
+        int bookID = 72;
         PgsqlDatabaseApi instance = new PgsqlDatabaseApi();
         boolean expResult = true;
         boolean result = instance.delete(bookID);

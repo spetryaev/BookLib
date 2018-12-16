@@ -25,10 +25,12 @@ public class BookLibMain {
     
     public static void main(String[] args) throws Exception {
        
-    logBasicSystemInfo();
+    //logBasicSystemInfo();
     
-         
-       
+    PgsqlDatabaseApi pgsql = new PgsqlDatabaseApi();
+    pgsql.printBookList();
+    pgsql.delete(14);
+    pgsql.printBookList();
    }
     
     

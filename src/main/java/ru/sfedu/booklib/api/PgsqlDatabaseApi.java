@@ -34,10 +34,10 @@ public class PgsqlDatabaseApi implements InterfaceAPI{
     private static Connection conn;
     private static Statement statement;
     private static ResultSet queryResult;
-    private static boolean connStatus;
-
+    private static boolean connStatus = connectToDatabase();
     
-    protected static boolean connectToDatabase(){
+    
+    private static boolean connectToDatabase(){
         log.info("\"connectToDatabase\" => Try to get connection");
         try {            
             Class.forName("org.postgresql.Driver");
@@ -69,7 +69,8 @@ public class PgsqlDatabaseApi implements InterfaceAPI{
     @Override
     public boolean addBook (Book bookObject) {
         boolean status = false;
-        try {
+        if (connStatus){
+            try {
             String query = "insert into books (bookId, bookName, bookAuthor, bookGenre, bookYear, bookPublisher, pageQuantity) values ";
             query += "(" + bookObject.bookID + ", '"+ 
                            bookObject.bookName + "', '" + 
@@ -87,18 +88,23 @@ public class PgsqlDatabaseApi implements InterfaceAPI{
                 return status;
             }
             return status;
+            }
+            
+            catch (SQLException e){
+                log.error(e);
+                return status;
+            }
         }
-        catch (SQLException e){
-            log.error(e);
-            return status;
-        }
-        
+        return connStatus;
     }
 
     
     @Override
     public List<Book> getBookList() {
-        try{
+        
+        if (connStatus) {
+            
+            try{
             String query = "select * from books";
             queryResult = statement.executeQuery(query);
             List<Book> bookList = new ArrayList<>();
@@ -113,17 +119,22 @@ public class PgsqlDatabaseApi implements InterfaceAPI{
                         queryResult.getString(6),
                         queryResult.getString(7)));
             } 
+            
             if (bookList.size() > 0) {
                 log.info("\"getBookList\" => Book list RECIEVED successfully.");
                 return bookList;
             }
             return null;
            
-        }
-        catch (SQLException e){
+            }
+        
+            catch (SQLException e){
             log.error(e);
             return null;
+            }
+        
         }
+        return null;
     }
 
     
@@ -173,66 +184,73 @@ public class PgsqlDatabaseApi implements InterfaceAPI{
     @Override
     public boolean update(Book bookObject) {
         boolean status = false;
-        try {
+        
+        if (connStatus){
+            try {
             
-            String query = "update books set ";
-            query += "bookName = '" + bookObject.bookName + "', " + 
-                     "bookAuthor = '" + bookObject.bookAuthor + "', " + 
-                     "bookGenre = '" + bookObject.bookGenre + "', " + 
-                     "bookYear = '" + bookObject.bookYear + "', " + 
-                     "bookPublisher = '" + bookObject.bookPublisher + "', " + 
-                     "pageQuantity = '" + bookObject.pageQuantity + "'";
-            query +=" where bookId = " + bookObject.bookID;
+                String query = "update books set ";
+                query += "bookName = '" + bookObject.bookName + "', " + 
+                        "bookAuthor = '" + bookObject.bookAuthor + "', " + 
+                        "bookGenre = '" + bookObject.bookGenre + "', " + 
+                        "bookYear = '" + bookObject.bookYear + "', " + 
+                        "bookPublisher = '" + bookObject.bookPublisher + "', " + 
+                        "pageQuantity = '" + bookObject.pageQuantity + "'";
+                query +=" where bookId = " + bookObject.bookID;
             
-            int result = statement.executeUpdate(query);
-            if (result>0){
-                status = true;
-                commitConnection();
-                log.info("\"update\" => UPDATE data success.");
+                int result = statement.executeUpdate(query);
+                if (result>0){
+                    status = true;
+                    commitConnection();
+                    log.info("\"update\" => UPDATE data success.");
+                    return status;
+                }
+           
                 return status;
             }
-           
-            return status;
+            catch(SQLException e){
+                log.error(e);
+                return status;
+            }
         }
-        catch(SQLException e){
-            log.error(e);
-            return status;
-        }
-        
+        return connStatus;
     }
 
     
     @Override
     public boolean delete(int bookID) {
         boolean status = false;
-        try {
-            String query = "delete from books where bookId = " + bookID;
-            int result = statement.executeUpdate(query);
-            if (result>0) {
-                status = true;
-                log.info("\"delete\" => DELETE data success.");
-                commitConnection();
+        
+        if(connStatus){
+            try {
+                String query = "delete from books where bookId = " + bookID;
+                int result = statement.executeUpdate(query);
+                if (result>0) {
+                    status = true;
+                    log.info("\"delete\" => DELETE data success.");
+                    commitConnection();
+                return status;
+                }
+                else {log.error("\"delete\" => Delete error.");}
+            return status;
+        }
+            catch (SQLException e){
+                log.error(e);
                 return status;
             }
-            else {log.error("\"delete\" => Delete error.");}
-            return status;
         }
-        catch (SQLException e){
-            log.error(e);
-            return status;
-        }
+        return connStatus;
       
     }
     
     
     public boolean printBook (Book bookObject){
         try {
-            log.info("\"printBook\" => "+ String.valueOf(bookObject.bookID) +" "+
-                  bookObject.bookName +" "+
-                  bookObject.bookAuthor +" "+
-                  bookObject.bookGenre +" "+
-                  bookObject.bookYear +" "+
-                  bookObject.bookPublisher +" "+
+            log.info("\"printBook\" => "+ String.valueOf(bookObject.bookID) +" | "+
+                  bookObject.bookName +" | "+
+                  bookObject.bookAuthor +" | "+
+                  bookObject.bookGenre +" | "+
+                  bookObject.bookYear +" | "+
+                  bookObject.bookPublisher +" | "+
                   bookObject.pageQuantity);
             return true;
         }
