@@ -65,46 +65,6 @@ public class ConstantsTest {
         
     }
 
-    /**
-     * Test of getDATABASE_URL method, of class Constants.
-     */
-    @Test
-    public void testGetDATABASE_URL() {
-        System.out.println("getDATABASE_URL");
-        Constants instance = new Constants();
-        String expResult = "jdbc:postgresql://127.0.0.1:5432/db";
-        String result = instance.getDATABASE_URL();
-        assertEquals(expResult, result);
-        
-    }
-
-    /**
-     * Test of getDATABASE_USER method, of class Constants.
-     */
-    @Test
-    public void testGetDATABASE_USER() {
-        System.out.println("getDATABASE_USER");
-        String expResult = "postgres";
-        String result = Constants.getDATABASE_USER();
-        assertEquals(expResult, result);
-        
-    }
-
-    /**
-     * Test of getDATABASE_PASSWORD method, of class Constants.
-     */
-    @Test
-    public void testGetDATABASE_PASSWORD() {
-        System.out.println("getDATABASE_PASSWORD");
-        String expResult = "somepass";
-        String result = Constants.getDATABASE_PASSWORD();
-        assertEquals(expResult, result);
-        
-    }
-
-    /**
-     * Test of getProperty method, of class Constants.
-     */
     @Test
     public void testGetProperty() {
         System.out.println("getProperty");

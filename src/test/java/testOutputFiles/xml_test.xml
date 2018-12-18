@@ -189,5 +189,32 @@
          <bookPublisher>Poland</bookPublisher>
          <pageQuantity>304</pageQuantity>
       </book>
+      <book>
+         <bookID>23</bookID>
+         <bookName>Test xml</bookName>
+         <bookAuthor>Sapkovsky</bookAuthor>
+         <bookGenre>Fantasy</bookGenre>
+         <bookYear>1985</bookYear>
+         <bookPublisher>Poland</bookPublisher>
+         <pageQuantity>304</pageQuantity>
+      </book>
+      <book>
+         <bookID>23</bookID>
+         <bookName>Test xml</bookName>
+         <bookAuthor>Sapkovsky</bookAuthor>
+         <bookGenre>Fantasy</bookGenre>
+         <bookYear>1985</bookYear>
+         <bookPublisher>Poland</bookPublisher>
+         <pageQuantity>304</pageQuantity>
+      </book>
+      <book>
+         <bookID>23</bookID>
+         <bookName>Test xml</bookName>
+         <bookAuthor>Sapkovsky</bookAuthor>
+         <bookGenre>Fantasy</bookGenre>
+         <bookYear>1985</bookYear>
+         <bookPublisher>Poland</bookPublisher>
+         <pageQuantity>304</pageQuantity>
+      </book>
    </bookList>
 </XMLBookList>

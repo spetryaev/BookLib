@@ -22,21 +22,8 @@ public class Constants {
     
     private static final String XML_FILE_PATH = getProperty("XML_FILE_PATH");
     
-    private static final String DATABASE_HOST = getProperty("DATABASE_HOST");
-    private static final String DATABASE_PORT = getProperty("DATABASE_PORT");
-    private static final String DATABASE_NAME = getProperty("DATABASE_NAME");
-  
-    private static final String DATABASE_URL = "jdbc:postgresql://" + 
-                                                DATABASE_HOST+ ":" +
-                                                DATABASE_PORT+ "/" + 
-                                                DATABASE_NAME;
-    
-    private static final String DATABASE_USER = getProperty("DATABASE_USER");
-    
-    private static final String DATABASE_PASSWORD = getProperty("DATABASE_PASSWORD");
     
     
-
     public static String getCSV_FILE_PATH() {
         if(debug){logPropGetter("CSV_FILE_PATH = " + CSV_FILE_PATH);}
         return CSV_FILE_PATH;
@@ -45,21 +32,6 @@ public class Constants {
     public static String getXML_FILE_PATH() {
         logPropGetter("XML_FILE_PATH = " + XML_FILE_PATH);
         return XML_FILE_PATH;
-    }
-
-    public String getDATABASE_URL() {
-        logPropGetter("DATABASE_URL (//HOST:PORT/DBNAME) = " + DATABASE_URL);
-        return DATABASE_URL;
-    }
-
-    public static String getDATABASE_USER() {
-        logPropGetter("DATABASE_USER = " + DATABASE_USER);
-        return DATABASE_USER;
-    }
-
-    public static String getDATABASE_PASSWORD() {
-        logPropGetter("DATABASE_PASSWORD = " + DATABASE_PASSWORD);
-        return DATABASE_PASSWORD;
     }
     
     

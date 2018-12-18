@@ -21,24 +21,19 @@ import java.util.ArrayList;
  * @author Sergey
  */
 public class PgsqlDatabaseApi implements InterfaceAPI{
-
-    
-    private static final Constants c = new Constants();
-    private static final String DATABASE_URL = c.getDATABASE_URL();
-    private static final String DATABASE_USER = c.getDATABASE_USER();
-    private static final String DATABASE_PASSWORD = c.getDATABASE_PASSWORD();
-    
-        
     private final static Logger log = Logger.getLogger(PgsqlDatabaseApi.class);
+    
+    
     private static final boolean debug = true;
     private static Connection conn;
     private static Statement statement;
     private static ResultSet queryResult;
-    private static boolean connStatus = connectToDatabase();
+    private static boolean connStatus;
     
     
-    private static boolean connectToDatabase(){
+    private static boolean connectToDatabase(String DATABASE_URL, String DATABASE_USER, String DATABASE_PASSWORD){
         log.info("\"connectToDatabase\" => Try to get connection");
+        
         try {            
             Class.forName("org.postgresql.Driver");
             PgsqlDatabaseApi.conn = DriverManager.getConnection(DATABASE_URL, DATABASE_USER, DATABASE_PASSWORD);
@@ -62,7 +57,6 @@ public class PgsqlDatabaseApi implements InterfaceAPI{
             log.fatal("\"connectToDatabase\" => Connection failed." + e);
                 return false;
         }
-        
     }
     
     
@@ -287,7 +281,7 @@ public class PgsqlDatabaseApi implements InterfaceAPI{
     }
     
     
-    protected static void closeConnection (){
+    public static void closeConnection (){
         try {
             if (connStatus){
                 conn.close();
@@ -299,4 +293,27 @@ public class PgsqlDatabaseApi implements InterfaceAPI{
         }
     }
     
+    
+    //defaut constructor
+    public PgsqlDatabaseApi() {};
+    
+    
+    //custom constructor with connecting
+    public PgsqlDatabaseApi(String db_host,
+                            String db_port,
+                            String db_name,
+                            String db_user,
+                            String db_pass) {
+ 
+                      
+        String db_url = "jdbc:postgresql://" + 
+                        db_host+ ":" +
+                        db_port+ "/" + 
+                        db_name;
+    
+        connStatus = connectToDatabase(db_url, db_user, db_pass);
+     
+     
+    }
+
 }

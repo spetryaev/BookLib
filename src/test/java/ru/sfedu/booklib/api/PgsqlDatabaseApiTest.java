@@ -23,7 +23,12 @@ public class PgsqlDatabaseApiTest extends PgsqlDatabaseApi{
     
     private static final Logger log = Logger.getLogger(PgsqlDatabaseApiTest.class);
     
-    
+    String db_host = "127.0.0.1";
+    String db_port = "5432";
+    String db_name = "db";
+    String db_user = "postgres";
+    String db_pass = "somepass";
+        
     public PgsqlDatabaseApiTest() {
     }
     
@@ -51,7 +56,7 @@ public class PgsqlDatabaseApiTest extends PgsqlDatabaseApi{
     public void testAddBook() {
         log.debug("\t @TEST@ \t \"PgsqlDatabaseApiTest\" => \"testAddbook\" =>");
         Book bookObject = new Book(72,"The Witr","Test", "Fantasy", "1985","Poland","304");
-        PgsqlDatabaseApi instance = new PgsqlDatabaseApi();
+        PgsqlDatabaseApi instance = new  PgsqlDatabaseApi(db_host, db_port, db_name, db_user, db_pass);
         boolean expResult = instance.addBook(bookObject);
         boolean result = true;
         assertEquals(expResult, result);
@@ -65,7 +70,7 @@ public class PgsqlDatabaseApiTest extends PgsqlDatabaseApi{
     @Test
     public void testGetBookList() {
         log.debug("\t @TEST@ \t \"PgsqlDatabaseApiTest\" => \"testGetBookList\" =>");
-        PgsqlDatabaseApi instance = new PgsqlDatabaseApi();
+        PgsqlDatabaseApi instance =  new PgsqlDatabaseApi(db_host, db_port, db_name, db_user, db_pass);
         List<Book> expResult = instance.getBookList();
         List<Book> result = expResult;
         assertEquals(expResult, result);
@@ -79,7 +84,7 @@ public class PgsqlDatabaseApiTest extends PgsqlDatabaseApi{
     public void testGetBookById() {
         log.debug("\t @TEST@ \t \"PgsqlDatabaseApiTest\" => \"testGetBookById\" =>");
         int bookID = 14;
-        PgsqlDatabaseApi instance = new PgsqlDatabaseApi();
+        PgsqlDatabaseApi instance = new  PgsqlDatabaseApi(db_host, db_port, db_name, db_user, db_pass);
         Book expResult =  instance.getBookById(bookID);
         Book result = expResult;
         assertEquals(expResult, result);
@@ -91,7 +96,7 @@ public class PgsqlDatabaseApiTest extends PgsqlDatabaseApi{
     @Test
     public void testPrintBookList() {
         log.debug("\t @TEST@ \t \"PgsqlDatabaseApiTest\" => \"testPrintBookList\" =>");
-        PgsqlDatabaseApi instance = new PgsqlDatabaseApi();
+        PgsqlDatabaseApi instance = new  PgsqlDatabaseApi(db_host, db_port, db_name, db_user, db_pass);
         boolean expResult = true;
         boolean result = instance.printBookList();
         assertEquals(expResult, result);
@@ -104,7 +109,7 @@ public class PgsqlDatabaseApiTest extends PgsqlDatabaseApi{
     public void testUpdate() {
         log.debug("\t @TEST@ \t \"PgsqlDatabaseApiTest\" => \"testUpdate\" =>");
         Book bookObject = new Book(22,"update test 5","Test", "TTTTEEEST", "1985","Poland","304");
-        PgsqlDatabaseApi instance = new PgsqlDatabaseApi();
+        PgsqlDatabaseApi instance = new  PgsqlDatabaseApi(db_host, db_port, db_name, db_user, db_pass);
         boolean expResult = true;
         boolean result = instance.update(bookObject);
         assertEquals(expResult, result);
@@ -118,7 +123,7 @@ public class PgsqlDatabaseApiTest extends PgsqlDatabaseApi{
     public void testDelete() {
         log.debug("\t @TEST@ \t \"PgsqlDatabaseApiTest\" => \"testDelete\" =>");
         int bookID = 72;
-        PgsqlDatabaseApi instance = new PgsqlDatabaseApi();
+        PgsqlDatabaseApi instance = new  PgsqlDatabaseApi(db_host, db_port, db_name, db_user, db_pass);
         boolean expResult = true;
         boolean result = instance.delete(bookID);
         assertEquals(expResult, result);
@@ -132,7 +137,7 @@ public class PgsqlDatabaseApiTest extends PgsqlDatabaseApi{
     public void testPrintBook() {
         log.debug("\t @TEST@ \t \"PgsqlDatabaseApiTest\" => \"testPrintBook\" =>");
         Book bookObject = new Book(22,"TESTPRINT","Test", "Fantasy", "1488","Poland","304");
-        PgsqlDatabaseApi instance = new PgsqlDatabaseApi();
+        PgsqlDatabaseApi instance = new  PgsqlDatabaseApi(db_host, db_port, db_name, db_user, db_pass);
         boolean expResult = true;
         boolean result = instance.printBook(bookObject);
         assertEquals(expResult, result);
